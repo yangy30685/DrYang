@@ -1,0 +1,39 @@
+#!/bin/bash
+
+mkdir -p /var/run/xl2tpd;
+touch /var/run/xl2tpd/l2tp-control;
+
+service strongswan restart;
+
+systemctl restart xl2tpd.service;
+systemctl status xl2tpd.service;
+
+ipsec up myvpn;
+
+#Start the L2TP connection:
+echo "-------------------------------";
+echo "c myvpn" > /var/run/xl2tpd/l2tp-control && echo "continue...";
+echo "-------------------------------";
+
+VAR_IP="$(ip route | grep "default via" | awk '{print $3}')"
+
+YOUR_IP="$(wget -qO- ifconfig.co)";
+
+echo ${VAR_IP};
+echo ${YOUR_IP};
+echo "-------------------------------";
+
+route add 161.117.10.16 gw ${VAR_IP};
+route add ${YOUR_IP} gw ${VAR_IP};
+
+route add default dev ppp0
+
+echo -------------------------------;
+ifconfig
+
+
+VAR_NOW="$(wget -qO- ifconfig.co)";
+
+echo "ip=${VAR_NOW}";
+
+
