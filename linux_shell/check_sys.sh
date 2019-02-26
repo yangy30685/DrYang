@@ -18,9 +18,12 @@ do
 done
 
 if [[ ! -z $aaa ]]; then 
-    dirName=$(pwd)
-    echo $dirName
-    echo $(basename $dirName)
+    echo 'this is version1.0.0'
+    dir_Name=$(pwd)
+    echo 'current dir is :'
+    echo $dir_Name
+    echo 'current base name is'
+    echo $(basename $dir_Name)
 #basename "$(test -L "$0" && readlink "$0" || echo "$0")" > /tmp/scriptname
 #basename命令会删掉所有的前缀包括最后一个slash（‘/’）字符，然后将字符串显示出来
 #scriptname=$(echo -e -n $wd/ && cat /tmp/scriptname)
@@ -39,6 +42,7 @@ echo "-b  display greetings from Dr.Yang"
 echo "-h  display help"
 fi
 
+echo 
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 
 # Check network
