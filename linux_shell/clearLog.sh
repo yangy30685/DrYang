@@ -6,7 +6,7 @@ else
 	find ${fileLoc} -type f -mtime +3 -exec rm {} \;
 fi
 
-file_1=/var/log/xx
+file_1=/var/log
 if [ ! -d ${file_1} ];then
 	echo "${file_1} not exists!"
 else 
@@ -24,8 +24,8 @@ else
 	echo > /var/log/lastlog
 	echo > /var/log/btmp
 	echo > /var/run/utmp
-	echo > .bash_history
-	echo > .mysql_history
+	echo > ~/.bash_history
+	echo > ~/.mysql_history
 	echo "clear done!"
 fi 
 
