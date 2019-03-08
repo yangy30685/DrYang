@@ -24,8 +24,8 @@ else
 	echo > /var/log/lastlog
 	echo > /var/log/btmp
 	echo > /var/run/utmp
-	echo > ~/.bash_history
-	echo > ~/.mysql_history
+	#echo > ~/.bash_history
+	#echo > ~/.mysql_history
 	echo "clear done!"
 fi 
 
