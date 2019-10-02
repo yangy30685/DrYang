@@ -1,11 +1,8 @@
 Yo Bro! How you doing?<br>
 MORE demo can be found in yangspot.com which is my personal website!<br>
 ---
-This is a repository used while I learned some popular programming languages<br>
-It contains anything I encountered e.g. basic examples, guides, demos and etc. 
-Hope its also helpful for you
 
-[yangspot.com](http://www.yangspot.com)<br>
+161.117.37.85<br>
 
 Here is a classic example for C<br> 
 ```c
